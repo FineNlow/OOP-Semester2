@@ -21,27 +21,38 @@ public class newComputer {
         System.out.println("Do you want printer? 1 is Yes / 0 is No");
         int printer = input.nextInt();
         
-        double addDisc = 65.99;
-        String addD = "* DVD-ROM >>> 65.99$";
+        double total = 375.99;
         
-        double addPrinter = 125.00;
-        String addP = "* Printer >>> 125.00$";
+        System.out.println("======= Your order =======");
+        System.out.println("* computer >>> 375.99$");
         
-        switch (monitor) {
+        if (monitor == 38) {
             
-            case 38:
-                switch (disc) {
-                    case 1:
-                        switch (printer) {
-                            case 1:
-                                
-                                System.out.println("======= Your order =======");
-                                System.out.println("* computer >>> 375.99$");
-                                System.out.println("* 38'Monitor >>> 75.99$" + "\n" + addD + "\n" + addP);
-                                System.out.println("======= Total price >>> " + (3));
-                        }
-                }
-            case 43:
+            total += 75.99;
+            System.out.println("* 38'Monitor >>> 75.99$");
+            
+        } else {
+            
+            total += 99.99;
+            System.out.println("* 43'Monitor >>> 99.99$");
+        
         }
+        
+        if (disc == 1) {
+            
+            total += 65.99;
+            System.out.println("* DVD-Rom >>> 65.99$");
+            
+        }
+        
+        if (printer == 1) {
+            
+            total += 125.00;
+            System.out.println("* Printer >>> 125.00$");
+            
+        }
+        
+        System.out.println("======= Total price >>> " + total + " =======");
+        
     }
 }

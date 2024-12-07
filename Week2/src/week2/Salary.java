@@ -12,6 +12,9 @@ public class Salary {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
+        int salary = (int) (float) 0;
+        int bonus = (int) (float) 0;
+        
         System.out.print("Please insert your name : ");
         String name = input.nextLine();
         
@@ -29,91 +32,35 @@ public class Salary {
         
         System.out.println("Hi, " + name);
         
+        if ((age >= 21) && (age <= 31)) {
+
+            salary += (work * 300) - (absent * 50);
+
+        } else if ((age  >= 31) && (age <= 40)) {
+
+            salary += (work * 500) - (absent * 50);
+
+        } else if ((age >= 41) && (age <= 50)) {
+
+            salary += (work * 1000) - (absent * 25);
+
+        } else if ((age >= 51) && (age <= 60)) {
+
+            salary += (work * 3000);
+
+        }
+        
         if ((weight >= 10) && (weight < 61)) {
             
-            if ((age >= 21) && (age <= 31)) {
-                
-                double salary;
-                salary = (work * 300) - (absent * 50);
-                System.out.println("Your salary is " + salary + " Bath" + "\n" + "Your salary and bonus is " + (salary + 5000) + " Bath");
-                
-            } else if ((age  >= 31) && (age <= 40)) {
-                
-                double salary;
-                salary = (work * 500) - (absent * 50);
-                System.out.println("Your salary is " + salary + " Bath" + "\n" + "Your salary and bonus is " + (salary + 5000) + " Bath");
-                
-            } else if ((age >= 41) && (age <= 50)) {
-                
-                double salary;
-                salary = (work * 1000) - (absent * 25);
-                System.out.println("Your salary is " + salary + " Bath" + "\n" + "Your salary and bonus is " + (salary + 5000) + " Bath");
-                
-            } else if ((age >= 51) && (age <= 60)) {
-                
-                double salary;
-                salary = (work * 3000);
-                System.out.println("Your salary is " + salary + " Bath" + "\n" + "Your salary and bonus is " + (salary + 5000) + " Bath");
-                
-            }
+            bonus += salary + 5000;
     
         } else if ((weight >= 61) && (weight <= 90)) {
             
-            if ((age >= 21) && (age <= 31)) {
-                
-                double salary;
-                salary = (work * 300) - (absent * 50);
-                System.out.println("Your salary is " + salary + " Bath" + "\n" + "Your salary and bonus is " + (salary + (5000 - ((weight - 60) * 10))) + " Bath");
-                
-            } else if ((age  >= 31) && (age <= 40)) {
-                
-                double salary;
-                salary = (work * 500) - (absent * 50);
-                System.out.println("Your salary is " + salary + " Bath" + "\n" + "Your salary and bonus is " + (salary + (5000 - ((weight - 60) * 10))) + " Bath");
-                
-            } else if ((age >= 41) && (age <= 50)) {
-                
-                double salary = (work * 1000) - (absent * 25);
-                salary = (work * 1000) - (absent * 25);
-                System.out.println("Your salary is " + salary + " Bath" + "\n" + "Your salary and bonus is " + (salary + (5000 - ((weight - 60) * 10))) + " Bath");
-                
-            } else if ((age >= 51) && (age <= 60)) {
-                
-                double salary;
-                salary = (work * 3000);
-                System.out.println("Your salary is " + salary + " Bath" + "\n" + "Your salary and bonus is " + (salary + (5000 - ((weight - 60) * 10))) + " Bath");
-                
-            }
-        } else if (weight > 90) {
-            
-            if ((age >= 21) && (age <= 31)) {
-                
-                double salary;
-                salary = (work * 300) - (absent * 50);
-                System.out.println("Your salary is " + salary + " Bath");
-                
-            } else if ((age  >= 31) && (age <= 40)) {
-                
-                double salary;
-                salary = (work * 500) - (absent * 50);
-                System.out.println("Your salary is " + salary + " Bath");
-                
-            } else if ((age >= 41) && (age <= 50)) {
-                
-                double salary;
-                salary = (work * 1000) - (absent * 25);
-                System.out.println("Your salary is " + salary + " Bath");
-                
-            } else if ((age >= 51) && (age <= 60)) {
-                
-                double salary;
-                salary = (work * 3000);
-                System.out.println("Your salary is " + salary + " Bath");
-                
-        } else {
-                System.out.println("Wrong weight input");
-            }
+            bonus += salary + (5000 - ((weight - 60) * 10));
     
         }
+        
+        System.out.println("Your salary is " + salary + " bath" + "\n" + "Your salary and bonus is " + bonus + " Bath");
+        
     }
 }
